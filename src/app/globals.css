@@ -15,6 +15,7 @@
   --color-danger: #d7191c;
 }
 
+
 /* Dark Theme */
 @theme dark {
   --color-background: #1a1a1a;
@@ -85,6 +86,10 @@ button {
 body {
   top: 0 !important;
   position: static !important;
+  font-family: Poppins ;
+}
+.font-inter {
+  font-family: Inter;
 }
 
 body .skiptranslate {

@@ -16,7 +16,7 @@ const TestimonialCard = () => {
           className="w-10 h-10 rounded-full"
         />
 
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center font-inter ">
           <h3 className="text-base font-semibold">Nabil Ben-Naoum</h3>
           <p className="text-sm text-[#333333]">10 December 2024</p>
           
@@ -116,7 +116,7 @@ const TestimonialCard = () => {
           </svg>
         </div>
       </div>
-      <p className="text-sm font-normal text-[#333333] mb-2">
+      <p className="text-sm font-normal text-[#333333] mb-2 font-inter">
         Vadim was extremely professional and knowledgeable about posing and
         angles. He is very thorough and ensures that you are satisfied....
       </p>

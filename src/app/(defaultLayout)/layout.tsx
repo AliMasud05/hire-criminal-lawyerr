@@ -11,6 +11,7 @@ const poppins = Poppins({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
+
 export const metadata: Metadata = {
   title: "Nabil Ben-Naoum - Criminal Defense Lawyer",
   description:
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${poppins.className}   antialiased`}>
         <div className="flex min-h-screen bg-white">
           {/* Desktop Sidebar */}
           <div className="hidden lg:block lg:w-1/5 xl:w-1/6">

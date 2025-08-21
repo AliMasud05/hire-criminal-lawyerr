@@ -39,7 +39,7 @@ export function Sidebar() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className={`block text-lg uppercase font-semibold  transition-colors hover:text-red-600 ${
+                className={`block text-base uppercase font-semibold  transition-colors hover:text-red-600 ${
                   pathname === item.href ? "text-black" : "text-gray-600"
                 }`}
               >

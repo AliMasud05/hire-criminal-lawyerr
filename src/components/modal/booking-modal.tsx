@@ -384,7 +384,7 @@ export function BookingModal({ onClose }: BookingModalProps) {
                   </Button>
 
                   <p className="text-xs text-gray-500 mt-4 text-center">
-                    By clicking "Pay", you agree to our terms of service and
+                    By clicking &quot;Pay&quot;, you agree to our
                     privacy policy. Your payment information is processed
                     securely and never stored on our service
                   </p>
