@@ -99,7 +99,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white py-3">
+                <Button className="w-full bg-[#990012] hover:bg-red-700 text-white py-5 rounded-2xl">
                   Send Now →
                 </Button>
               </form>
