@@ -69,7 +69,7 @@ export function BookingModal({ onClose }: BookingModalProps) {
 
                   <div className="grid md:grid-cols-2 gap-8">
                     {/* Calendar */}
-                    <Card className="p-6 bg-gray-400">
+                    <Card className="p-6 bg-gray-100">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-bold text-2xl flex items-center gap-2">
                           <svg
@@ -153,7 +153,7 @@ export function BookingModal({ onClose }: BookingModalProps) {
                     </Card>
 
                     {/* Form */}
-                    <Card className="p-6">
+                    <Card className="p-6 bg-gray-100">
                       <h3 className="font-semibold text-xl mb-4 flex items-center gap-2">
                         <svg
                           className="w-5 h-5"
