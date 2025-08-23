@@ -5,13 +5,22 @@ import { usePathname } from "next/navigation";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "./GoogleTranslateProvider";
 
 export function Sidebar() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
     setMounted(true);
+    // Safely get language from localStorage
+    if (typeof window !== "undefined") {
+      const storedLanguage = localStorage.getItem("selectedLanguage");
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+    }
   }, []);
 
   const navItems = [
@@ -51,9 +60,16 @@ export function Sidebar() {
                 >
                   {item.name}
                   {mounted && pathname === item.href && (
-                    <span className="absolute left-0 bottom-0 w-full h-[5px] top-7 rounded-2xl bg-[#990012] transition-all duration-500 ease-out origin-left scale-x-100"></span>
+                    <span
+                      className={`absolute left-0 bottom-0 w-full 
+                        transition-all duration-500 ease-out origin-left scale-x-100 ${
+                          language === "fr" &&
+                          item.href === "/book-consultation"
+                            ? "top-11  h-[5px] rounded-2xl bg-[#990012]  "
+                            : "top-7  h-[5px] rounded-2xl bg-[#990012]"
+                        }`}
+                    ></span>
                   )}
-                  {/* <span className="absolute left-0 bottom-0 w-0 h-[6px] top-7 rounded-2xl bg-red-600 transition-all duration-300 group-hover:w-full group-hover:scale-x-100"></span> */}
                 </Link>
               </div>
             </li>
@@ -64,7 +80,7 @@ export function Sidebar() {
       {/* Language Selector */}
       <div className="p-6 border-t border-gray-200">
         <button className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
-          English
+          <LanguageSwitcher />
         </button>
       </div>
     </div>

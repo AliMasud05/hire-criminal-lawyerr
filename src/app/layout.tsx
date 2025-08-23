@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
 import ReduxProvider from "@/redux/ReduxProvider";
+import GoogleTranslateProvider from "@/components/defaultLayout/GoogleTranslateProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         <Toaster position="bottom-right" richColors />
         <NextAuthSessionProvider>
+          <GoogleTranslateProvider>
           <ReduxProvider>{children}</ReduxProvider>
+          </GoogleTranslateProvider>
         </NextAuthSessionProvider>
       </body>
     </html>
