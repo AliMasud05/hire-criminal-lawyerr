@@ -65,7 +65,7 @@ export function Sidebar() {
                         transition-all duration-500 ease-out origin-left scale-x-100 ${
                           language === "fr" &&
                           item.href === "/book-consultation"
-                            ? "top-11  h-[5px] rounded-2xl bg-[#990012]  "
+                            ? "top-7  h-[5px] rounded-2xl bg-[#990012]  "
                             : "top-7  h-[5px] rounded-2xl bg-[#990012]"
                         }`}
                     ></span>

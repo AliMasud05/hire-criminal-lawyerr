@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import type React from "react";
 
-import ChatWidget from "@/components/defaultLayout/ChatWidget";
+// import ChatWidget from "@/components/defaultLayout/ChatWidget";
 import { MobileSidebar } from "@/components/defaultLayout/MobileSidebar";
 import { Sidebar } from "@/components/defaultLayout/Sidebar";
 
@@ -38,7 +38,8 @@ export default function RootLayout({
           <div className="flex-1 lg:w-4/5 xl:w-5/6">{children}</div>
 
           {/* Chat Icon - positioned fixed at bottom right */}
-          <ChatWidget />
+          {/* <ChatWidget /> */}
+          
         </div>
       </body>
     </html>

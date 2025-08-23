@@ -107,37 +107,37 @@ export function LanguageSwitcher() {
     };
 
     return (
-        <div className="flex items-center gap-2">
-            <Select onValueChange={handleChange} value={selectedLanguage}>
-                <SelectTrigger className="w-auto !h-6 md:!h-auto rounded-full !border-none font-bold text-black/70">
-                    <SelectValue>
-                        {{
-                            de: "German",
-                            en: "English",
-                            fr: "French",
-                            iu: "Inuktut",
-                            es: "Spanish",
-                            ar: "Arabic",
-                            pt: "Portuguese",
-                            hi: "Hindi",
-                            bn: "Bangla",
-                        }[selectedLanguage] || "Language"}
-                    </SelectValue>
-                </SelectTrigger>
-                <SelectContent className="bg-white text-black mt-6">
-                    {/* <SelectItem value="x">German</SelectItem> */}
-                    <SelectItem value="fr">French</SelectItem>
-                    {/* <SelectItem value="de">German</SelectItem> */}
-                    <SelectItem value="en">English</SelectItem>
-                    {/* <SelectItem value="fr">French</SelectItem>
+      <div className="flex items-center gap-2">
+        <Select onValueChange={handleChange} value={selectedLanguage}>
+          <SelectTrigger className="w-auto !h-6 md:!h-auto rounded-full !border-none font-bold text-black/70">
+            <SelectValue>
+              {{
+                de: "German",
+                en: "English",
+                fr: "French",
+                iu: "Inuktut",
+                es: "Spanish",
+                ar: "Arabic",
+                pt: "Portuguese",
+                hi: "Hindi",
+                bn: "Bangla",
+              }[selectedLanguage] || "Language"}
+            </SelectValue>
+          </SelectTrigger>
+          <SelectContent className="bg-white text-black mt-6">
+            {/* <SelectItem value="x">German</SelectItem> */}
+            <SelectItem value="es">Spanish</SelectItem>{" "}
+            {/* <SelectItem value="de">German</SelectItem> */}
+            <SelectItem value="en">English</SelectItem>
+            {/* <SelectItem value="fr">French</SelectItem>
                     <SelectItem value="iu">Inuktut (Syllabics)</SelectItem>
                     <SelectItem value="es">Spanish</SelectItem>
                     <SelectItem value="ar">Arabic</SelectItem>
                     <SelectItem value="pt">Portuguese</SelectItem>
                     <SelectItem value="hi">Hindi</SelectItem>
                     <SelectItem value="bn">Bangla</SelectItem> */}
-                </SelectContent>
-            </Select>
-        </div>
+          </SelectContent>
+        </Select>
+      </div>
     );
 }

@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "sonner";
+import GoogleTranslateProvider from "@/components/defaultLayout/GoogleTranslateProvider";
 import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
 import ReduxProvider from "@/redux/ReduxProvider";
-import GoogleTranslateProvider from "@/components/defaultLayout/GoogleTranslateProvider";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
+import "./globals.css";
+import CrispChat from "@/components/defaultLayout/CrispChat";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,7 +28,9 @@ export default function RootLayout({
         <Toaster position="bottom-right" richColors />
         <NextAuthSessionProvider>
           <GoogleTranslateProvider>
-          <ReduxProvider>{children}</ReduxProvider>
+            <ReduxProvider>{children}</ReduxProvider>
+            {/* <TawkToChat /> */}
+            <CrispChat />
           </GoogleTranslateProvider>
         </NextAuthSessionProvider>
       </body>
