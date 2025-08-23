@@ -1,7 +1,10 @@
 // components/defaultLayout/ChatWidget.tsx
 "use client";
 
-import React, { useState } from "react";
+import nabil from '@/assets/about/Ellipse 10.svg';
+import { Send } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,31 +13,32 @@ const ChatWidget = () => {
     <>
       {/* Chat Icon */}
       <div className="fixed bottom-6 right-6 z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
-          aria-label="Open chat"
-        >
-          {isOpen ? (
+        {isOpen ? (
+          <></>
+        ) : (
+          // <svg
+          //   xmlns="http://www.w3.org/2000/svg"
+          //   className="h-6 w-6"
+          //   fill="none"
+          //   viewBox="0 0 24 24"
+          //   stroke="currentColor"
+          // >
+          //   <path
+          //     strokeLinecap="round"
+          //     strokeLinejoin="round"
+          //     strokeWidth={2}
+          //     d="M6 18L18 6M6 6l12 12"
+          //   />
+          // </svg>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="bg-[#1E88E5] hover:bg-blue-700 text-white rounded-2xl p-2 shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+            aria-label="Open chat"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
+              width="40"
+              height="40"
               viewBox="0 0 38 32"
               fill="none"
             >
@@ -43,32 +47,39 @@ const ChatWidget = () => {
                 fill="white"
               />
             </svg>
-          )}
-        </button>
+          </button>
+        )}
       </div>
 
       {/* Chat Popup */}
       {isOpen && (
         <div className="fixed bottom-20 right-6 w-80 h-[500px] bg-white rounded-lg shadow-xl z-40 border border-gray-200 flex flex-col">
           {/* Chat Header */}
-          <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
-            <h3 className="font-semibold">Chat with us</h3>
+          <div className="bg-[#EDEDED] text-white p-4 rounded-t-lg flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <Image
+                src={nabil.src}
+                alt="Nabil Ben-Naoum, Professional Lawyer"
+                height={1000}
+                width={1000}
+                className="h-8 w-8 object-cover"
+              />
+              <h3 className="font-semibold text-black">Nabil Ben Naoum</h3>
+            </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white hover:text-gray-200"
+              className="text-white hover:text-gray-200 mr-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
                 fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
+                  d="M8.62432 12.4444L15.7444 5.32424C15.9092 5.15956 16 4.93973 16 4.70532C16 4.47092 15.9092 4.25108 15.7444 4.0864L15.2202 3.56205C14.8786 3.22085 14.3234 3.22085 13.9823 3.56205L8.00332 9.54105L2.01768 3.55541C1.85286 3.39073 1.63316 3.2998 1.39888 3.2998C1.16435 3.2998 0.944643 3.39073 0.779701 3.55541L0.255608 4.07977C0.0907965 4.24458 9.67561e-07 4.46428 9.70356e-07 4.69869C9.73151e-07 4.93309 0.0907965 5.15293 0.255608 5.31761L7.38218 12.4444C7.54752 12.6095 7.76826 12.7002 8.00293 12.6997C8.2385 12.7002 8.45912 12.6095 8.62432 12.4444Z"
+                  fill="black"
                 />
               </svg>
             </button>
@@ -83,15 +94,15 @@ const ChatWidget = () => {
 
           {/* Message Input */}
           <div className="p-4 border-t border-gray-200">
-            <div className="flex">
+            <div className="flex items-center">
               <input
                 type="text"
                 placeholder="Type your message..."
-                className="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1rounded-l-lg px-4 py-2 focus:outline-none 
+                "
               />
-              <button className="bg-blue-600 text-white px-4 rounded-r-lg hover:bg-blue-700 transition-colors">
-                Send
-              </button>
+
+              <Send />
             </div>
           </div>
         </div>
