@@ -15,6 +15,7 @@ import {
   useGetHolidaysQuery,
   useUpdateTimeSlotMutation,
 } from "@/redux/api/AppointmentApi";
+import { Value } from "react-calendar/dist/shared/types.js";
 
 export default function AdminDashboard() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
@@ -26,14 +27,15 @@ export default function AdminDashboard() {
   } | null>(null);
 
   // RTK Query hooks
-  const { data: holidaysResponse, isLoading: holidaysLoading } = useGetHolidaysQuery();
-  const holidays = holidaysResponse?.data || []; // Access the 'data' field from the response
+  const { data: holidaysResponse, isLoading: holidaysLoading } =
+    useGetHolidaysQuery();
+  const holidays = holidaysResponse || [];
   const { data: timeSlotsResponse, isLoading: timeSlotsLoading } =
     useGetAvailableTimeSlotsQuery(
       selectedDate ? format(selectedDate, "yyyy-MM-dd") : "",
       { skip: !selectedDate }
     );
-  const timeSlots = timeSlotsResponse?.data || []; // Access the 'data' field from the response
+  const timeSlots = timeSlotsResponse|| [];
   const [createHoliday] = useCreateHolidayMutation();
   const [deleteHoliday] = useDeleteHolidayMutation();
   const [createTimeSlots] = useCreateTimeSlotsMutation();
@@ -117,6 +119,15 @@ export default function AdminDashboard() {
     return holiday ? <p className="text-red-500 text-xs">Holiday</p> : null;
   };
 
+  // Handle calendar change
+  const handleCalendarChange = (value: Value) => {
+    if (Array.isArray(value)) {
+      setSelectedDate(value[0] || null);
+    } else {
+      setSelectedDate(value);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Admin Dashboard</h1>
@@ -125,7 +136,7 @@ export default function AdminDashboard() {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4">Select Date</h2>
           <Calendar
-            onChange={setSelectedDate}
+            onChange={handleCalendarChange}
             value={selectedDate}
             tileContent={tileContent}
             className="border-none"
@@ -157,13 +168,14 @@ export default function AdminDashboard() {
             <p>No holidays found.</p>
           ) : (
             <ul className="space-y-2 max-h-64 overflow-y-auto">
-              {holidays.map((holiday:any) => (
+              {holidays.map((holiday: any) => (
                 <li
                   key={holiday.id}
                   className="flex justify-between items-center p-2 bg-gray-50 rounded-md"
                 >
                   <span>
-                    {holiday.date} {holiday.description && `- ${holiday.description}`}
+                    {holiday.date}{" "}
+                    {holiday.description && `- ${holiday.description}`}
                   </span>
                   <button
                     onClick={() => handleDeleteHoliday(holiday.id)}
@@ -179,7 +191,8 @@ export default function AdminDashboard() {
         {/* Time Slot Management Section */}
         <div className="bg-white p-6 rounded-lg shadow-md md:col-span-2">
           <h2 className="text-xl font-semibold mb-4">
-            Manage Time Slots {selectedDate && `for ${format(selectedDate, "PPP")}`}
+            Manage Time Slots{" "}
+            {selectedDate && `for ${format(selectedDate, "PPP")}`}
           </h2>
           <button
             onClick={handleCreateTimeSlots}
@@ -194,12 +207,12 @@ export default function AdminDashboard() {
             <p>No time slots found for this date.</p>
           ) : (
             <ul className="space-y-2">
-              {timeSlots.map((slot) => (
+              {timeSlots.map((slot: any) => (
                 <li
                   key={slot.id}
                   className="flex justify-between items-center p-2 bg-gray-50 rounded-md"
                 >
-                  {editTimeSlot?.id === slot.id ? (
+                  {editTimeSlot?.id === slot.id && editTimeSlot ? (
                     <div className="flex space-x-2">
                       <input
                         type="text"

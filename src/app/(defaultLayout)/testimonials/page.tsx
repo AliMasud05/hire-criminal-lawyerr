@@ -1,77 +1,73 @@
-import google_icon from "@/assets/home/google_icon.png";
-import TestimonialCard from "@/components/defaultLayout/card/Testimonial-card";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import Script from "next/script";
 
 export default function TestimonialsPage() {
-  const testimonials = [
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/professional-male-headshot.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/professional-headshot-female.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/diverse-professional-headshots.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/placeholder-ry475.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/professional-client-headshot.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/professional-headshot-person.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/placeholder-4o1al.png",
-    },
-    {
-      name: "Charles Valade",
-      date: "10 December 2024",
-      rating: 5,
-      text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
-      avatar: "/professional-headshot-customer.png",
-    },
-  ];
+  // const testimonials = [
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/professional-male-headshot.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/professional-headshot-female.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/diverse-professional-headshots.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/placeholder-ry475.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/professional-client-headshot.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/professional-headshot-person.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/placeholder-4o1al.png",
+  //   },
+  //   {
+  //     name: "Charles Valade",
+  //     date: "10 December 2024",
+  //     rating: 5,
+  //     text: "Vadim was extremely professional and knowledgeable about posing and angles. He is very thorough and ensures that you are satisfied...",
+  //     avatar: "/professional-headshot-customer.png",
+  //   },
+  // ];
 
   return (
     <div className="lg:ml-0 p-6 lg:p-12 pt-16 lg:pt-12">
       <div className="max-w-7xl ml-0 md:ml-14">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          {/* <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             What Clients Say
-          </h1>
+          </h1> */}
           <p className="text-gray-600 text-lg">
             Real client comments showcasing our dedication and successful
             outcomes.
@@ -79,7 +75,7 @@ export default function TestimonialsPage() {
         </div>
 
         {/* Google Reviews Header */}
-       <div className="reviews-section bg-[#F4F4F4CC]/80 rounded-lg px-2 py-3 flex items-center gap-4 mb-8 flex-wrap font-inter">
+        {/* <div className="reviews-section bg-[#F4F4F4CC]/80 rounded-lg px-2 py-3 flex items-center gap-4 mb-8 flex-wrap font-inter">
                   <div className="flex items-center gap-2">
                     <Image
                       src={google_icon.src}
@@ -133,10 +129,10 @@ export default function TestimonialsPage() {
                   >
                     Write a review
                   </Button>
-                </div>
+                </div> */}
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
+        {/* <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
             // <Card key={index} className="p-6">
             //   <div className="flex items-center gap-3 mb-4">
@@ -175,10 +171,10 @@ export default function TestimonialsPage() {
             // </Card>
             <TestimonialCard key={index} /> 
           ))}
-        </div>
+        </div> */}
 
         {/* Pagination */}
-        <div className="flex items-center justify-center gap-2">
+        {/* <div className="flex items-center justify-center gap-2">
           <Button variant="ghost" size="sm">
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -195,7 +191,18 @@ export default function TestimonialsPage() {
           <Button variant="ghost" size="sm">
             <ChevronRight className="w-4 h-4" />
           </Button>
-        </div>
+        </div> */}
+
+        <Script
+          src="https://elfsightcdn.com/platform.js"
+          strategy="afterInteractive"
+          defer
+          async
+        />
+        <div
+          className="elfsight-app-68f7bed7-78bb-4006-8801-25f413c30250"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </div>
   );
