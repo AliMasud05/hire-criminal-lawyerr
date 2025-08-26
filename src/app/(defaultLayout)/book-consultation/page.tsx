@@ -2,7 +2,7 @@
 
 // import nabil from "@/assets/user/HR-2024-10-24 Nabil B 58 V2-Photoroom 1.png";
 import nabil from "@/assets/about/consultation.png";
-import { BookingModal } from "@/components/modal/booking-modal";
+// import { BookingModal } from "@/components/modal/booking-modal";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
@@ -10,6 +10,7 @@ import { useState } from "react";
 
 export default function BookConsultationPage() {
   const [showBookingModal, setShowBookingModal] = useState(false);
+  console.log(showBookingModal)
 
   return (
     <>
@@ -105,9 +106,9 @@ export default function BookConsultationPage() {
       </div>
 
       {/* Booking Modal */}
-      {showBookingModal && (
+      {/* {showBookingModal && (
         <BookingModal onClose={() => setShowBookingModal(false)} />
-      )}
+      )} */}
     </>
   );
 }
