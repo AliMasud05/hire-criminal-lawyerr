@@ -1,6 +1,7 @@
 "use client";
 
-import nabil from "@/assets/user/HR-2024-10-24 Nabil B 58 V2-Photoroom 1.png";
+// import nabil from "@/assets/user/HR-2024-10-24 Nabil B 58 V2-Photoroom 1.png";
+import nabil from "@/assets/about/consultation.png";
 import { BookingModal } from "@/components/modal/booking-modal";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
