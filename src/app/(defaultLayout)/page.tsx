@@ -1,12 +1,11 @@
 "use client";
+import nabil_image from "@/assets/about/nabil_img.jpg";
 import icon1 from "@/assets/skill/Frame.png";
 import icon4 from "@/assets/skill/Layer_1 (1).png";
 import icon5 from "@/assets/skill/Layer_1 (2).png";
 import icon3 from "@/assets/skill/Layer_1.png";
 import icon2 from "@/assets/skill/Vector (1).png";
 import icon6 from "@/assets/skill/Шар_1.png";
-import nabil from "@/assets/user/HR-2024-10-24 Nabil B 58 V2-Photoroom 1.png";
-import nabil_img_bg from "@/assets/user/placeholder.png";
 import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -351,7 +350,8 @@ export default function Home() {
             <div className="hero-image relative w-full max-w-md">
               <div className="rounded-lg relative">
                 <div className="relative h-[500px]">
-                  <Image
+                  <Image src={nabil_image.src} alt="Nabil Ben-Naoum" width={1000} height={1000} className="w-full h-full object-cover absolute top-0 left-0 z-50 rounded-lg" />
+                  {/* <Image
                     src={nabil_img_bg.src}
                     alt="Background"
                     width={1000}
@@ -364,7 +364,7 @@ export default function Home() {
                     width={1000}
                     height={1000}
                     className="w-full h-full object-cover absolute top-0 left-0 z-50 rounded-lg"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

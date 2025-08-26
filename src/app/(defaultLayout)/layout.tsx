@@ -1,16 +1,15 @@
-import type React from "react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import type React from "react";
 
-import { Sidebar } from "@/components/defaultLayout/Sidebar";
+// import ChatWidget from "@/components/defaultLayout/ChatWidget";
 import { MobileSidebar } from "@/components/defaultLayout/MobileSidebar";
-
+import { Sidebar } from "@/components/defaultLayout/Sidebar";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
-
 
 export const metadata: Metadata = {
   title: "Nabil Ben-Naoum - Criminal Defense Lawyer",
@@ -25,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}   antialiased`}>
+      <body className={`${poppins.className} antialiased`}>
         <div className="flex min-h-screen bg-white">
           {/* Desktop Sidebar */}
           <div className="hidden lg:block lg:w-1/5 xl:w-1/6">
@@ -37,6 +36,10 @@ export default function RootLayout({
 
           {/* Main Content */}
           <div className="flex-1 lg:w-4/5 xl:w-5/6">{children}</div>
+
+          {/* Chat Icon - positioned fixed at bottom right */}
+          {/* <ChatWidget /> */}
+          
         </div>
       </body>
     </html>

@@ -80,7 +80,7 @@ export default function BookConsultationPage() {
 
               <Button
                 onClick={() => setShowBookingModal(true)}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-base font-medium w-[200px]"
+                className="-ml-6 bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-base font-medium w-[200px]"
               >
                 Book Now
               </Button>
